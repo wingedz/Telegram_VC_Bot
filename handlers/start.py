@@ -4,69 +4,56 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from config import BOT_USERNAME
 
 
-@Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
+@Client.on_message(filters.command(["start", "start@DZVCrobot"]) & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        text="**Hello 👋🏻 {}!**\n\nI **Can Play Music In Voice Chats of Telegram Groups.**I Have A **lot of cool feature that will amaze You!**\n\n**Click /cmdlist For More Help On My Usage ❤**".format(message.from_user.mention),
+        text="**Ciao 👋🏻 {}!**\n\nPosso riprodurre musica nelle chat vocali dei gruppi di Telegram.**Ho un **un sacco di fantastiche funzioni che ti stupiranno!**\n\n** Usa il comando /cmdlist per ulteriori informazioni sul mio utilizzo ❤**".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton("➕ Add To Your Group ➕", url="https://t.me/GroupMuSicPlayBot?startgroup=true")
+            InlineKeyboardButton("➕ Aggiungimi al tuo gruppo➕", url="https://t.me/DZVCrobot?startgroup=true")
             ],[
-            InlineKeyboardButton("💬 Group", url="https://t.me/MusicBotSupports"),
-            InlineKeyboardButton("Channel 🔊", url="https://t.me/GroupMusicXNews")
-            ],[
-            InlineKeyboardButton("Commands 🛠", url="https://telegra.ph/Music-Bot-05-07")
+            InlineKeyboardButton("Commandi 🛠", url="https://telegra.ph/DZVCrobot-08-20")
             ]]
         ),
         disable_web_page_preview=True
     )
         
-@Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & ~filters.private & ~filters.channel)
+@Client.on_message(filters.command(["start", "start@DZVCrobot"]) & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
     await message.reply_text(
-        text="**Music Bot Is Online ✅**",
+        text="**Music Bot Online ✅**",
         reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/MusicBotSupports")
+            InlineKeyboardButton(text="🎙️ Supporto 🎙️", url="https://t.me/Winged_z")
             ]]
         )
     )
 
 
-@Client.on_message(filters.command(["cmdlist", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
+@Client.on_message(filters.command(["cmdlist", "start@DZVCrobot"]) & filters.private & ~filters.channel)
 async def cmdlist(_, message: Message):
     await message.reply_text(
-        text="""**Group Music Bot : Help Menu**
+        text="""**Menu di aiuto**
 
-__× First Add Me To Your Group..
-× Promote Me As Admin In Your Group With All Permission..__
+__× Aggiungimi al tuo gruppo..
+× Rendimi admin con tutti i permessi..__
 
-**🏷 Common Commands.**
-
-• `/play` - Song Name : __Plays Via Youtube__
-• `/dplay` - Song Name : __Play Via Deezer__
-• `/splay` - Song Name : __Play Via Jio Saavn__
-• `/playlist` - __Show now playing list__
-• `/current` - __Show now playing__
-
-• `/song` - Song Name : __Get The Song From YouTube__
-• `/vid` - Video Name : __Get The Video From YouTube__
-• `/deezer` - song name : __download songs you want quickly via deezer__
-• `/saavn` - song name : __download songs you want quickly via saavn__
-• `/search` - YouTube Title : __(Get YouTube Search Query)__
-
-**🏷 Group Admin Commands.**
-
-• `/skip` : __Skips Music__
-• `/pause` : __Pause Playing Music__
-• `/resume` : __Resume Playing Music__
-• `/end` : __Stops playing Music__
-• `/reload` : __Reloads Admin List__
-• `/userbotjoin` : __Assistant Joins The Group__
-• `/userbotleave` : __Assistant Leaves From The Group.__""",
+**🏷Comandi**
+◎ /play <nome canzone> - play song you requested
+◎ /playlist - Mostra la playlist
+◎ /current - Mostra cos'è in riproduzione
+◎ /player - apri le impostazioni
+◎ /pause - metti in pausa la canzone
+◎ /resume - riprendi la canzone
+◎ /skip - passa alla prossima canzone in queue
+◎ /end - stoppa la canzone
+◎ /userbotjoin - fai entrare l'userbot
+◎ /userbotleave - fai uscire l'userbot
+◎ /reload - Aggiorna la lista degli admin
+""",
         reply_markup=InlineKeyboardMarkup(
               [[
-              InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/MusicBotSupports")
+              InlineKeyboardButton(text="🎙️ Supporto 🎙️", url="https://t.me/Winged_z")
               ]]
           )
       )
