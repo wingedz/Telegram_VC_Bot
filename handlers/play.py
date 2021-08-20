@@ -96,7 +96,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
             if resp.status == 200:
                 f = await aiofiles.open("background.png", mode="wb")
                 await f.write(await resp.read())
-                await f.Chiudi()
+                await f.close()
 
     image1 = Image.open("./background.png")
     image2 = Image.open("etc/foreground.png")
