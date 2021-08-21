@@ -7,7 +7,7 @@ from config import BOT_USERNAME
 @Client.on_message(filters.command(["start", "start@DZVCrobot"]) & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        text="**Ciao 👋🏻 {}!**\n\nPosso riprodurre musica nelle chat vocali dei gruppi di Telegram.**Ho un **un sacco di fantastiche funzioni che ti stupiranno!**\n\n** Usa il comando /cmdlist per ulteriori informazioni sul mio utilizzo ❤**".format(message.from_user.mention),
+        text="**Ciao 👋🏻 {}!**\n\nPosso riprodurre musica nelle chat vocali dei gruppi di Telegram.**Ho un sacco di fantastiche funzioni che ti stupiranno!**\n\n** Usa il comando /cmdlist per ulteriori informazioni sul mio utilizzo ❤**".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(
             [[
             InlineKeyboardButton("➕ Aggiungimi al tuo gruppo➕", url="https://t.me/DZVCrobot?startgroup=true")
